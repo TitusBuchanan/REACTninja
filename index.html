@@ -21,8 +21,19 @@
                 name: 'Teezus',
                 age:27
             }
-            handleClick(e){
-                console.log(e.target)
+            handleClick = (e) => {
+                //console.log(e.target)
+                this.setState({         //SetState() is a function used to change the state by assing an obeject that updates whatver property we want to update
+                    name: "Yung Lean",
+                    age:1000000
+                })
+                console.log(this.state)
+            }
+            handleMouseOver = (e) => {
+                console.log(e.target,e.pageX)
+            }
+            handleCopy = (e) => {
+                console.log('Try Being Orginal For Once')
             }
             render() {
                 return (
@@ -31,6 +42,8 @@
                         <p> {Math.random() * 10 } </p>
                         <p> My name is:{this.state.name} and I am {this.state.age} </p>
                         <button onClick={this.handleClick}>Click Me</button>
+                        <button onMouseOver={this.handleMouseOver}>Hover me</button>
+                        <p onCopy={this.handleCopy}>What We Think We Become</p>
                     </div>
                 )
             }
